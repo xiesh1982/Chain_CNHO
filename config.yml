@@ -1,0 +1,38 @@
+version: 1
+build:
+  binary: cnho_stables
+  proto:
+    path: proto
+accounts:
+  - name: huang
+    coins:
+      - 2000000000000000000000000ucnho
+  - name: lin
+    coins:
+      - 2000000000000000000000000ucnho
+  - name: xie
+    coins:
+      - 2000000000000000000000000ucnho
+  - name: faucet
+    coins:
+      - 2000000000000000000000000ucnho
+client:
+  openapi:
+    path: docs/static/openapi.yml
+faucet:
+  name: faucet
+  coins:
+    - 100000000000ucnho
+  host: 0.0.0.0:1688
+validators:
+  - name: huang
+    bonded: 1000000000000000000000000ucnho
+genesis:
+  app_state:
+    crisis:
+      constant_fee:
+        denom: ucnho
+    staking:
+      params:
+        bond_denom: ucnho
+  chain_id: cnho_stables-1
